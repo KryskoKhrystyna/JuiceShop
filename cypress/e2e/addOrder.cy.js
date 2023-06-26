@@ -30,4 +30,11 @@ describe('add order', () => {
     cy.log(`checking the price 0`);
     cy.get('div#price').should('be.visible').contains('Total Price: 0¤');
     });
+
+    it('logout', () => {
+    loginPage.goToLogout();
+    cy.log(`log out`);
+    loginPage.getAccountButton().click();
+    loginPage.getLoginButton().should('be.visible')
+    });
 });

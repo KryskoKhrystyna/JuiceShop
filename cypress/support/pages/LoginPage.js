@@ -24,9 +24,18 @@ class LoginPage {
         return cy.get('#password');
     }
 
+    getLogoutButton(){
+        return cy.get('button#navbarLogoutButton>span');
+    }
+
     goToLoginForm(){
         this.getAccountButton().click();
         this.getLoginButton().click({ force: true });
+    }
+
+    goToLogout(){
+        this.getAccountButton().click();
+        this.getLogoutButton().click({ force: true });
     }
 
     submitLoginForm(email, password){
