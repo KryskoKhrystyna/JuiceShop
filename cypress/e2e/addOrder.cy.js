@@ -22,6 +22,12 @@ describe('add order', () => {
                 expect(productName1.trim()).to.equal(productName.trim());
                 });
             });
+    });
 
+    it('delete an order', () => {
+    cy.contains('span[fxshow=""]', 'Your Basket').click();
+    cy.get('button.mat-icon-button').find('svg[data-icon="trash-alt"]').click();
+    cy.log(`checking the price 0`);
+    cy.get('div#price').should('be.visible').contains('Total Price: 0¤');
     });
 });
