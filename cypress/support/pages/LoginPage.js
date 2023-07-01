@@ -4,6 +4,10 @@ class LoginPage {
         cy.visit('https://juice-shop-sanitarskyi.herokuapp.com/#/login');
     }
 
+    closeWelcomeBanner() {
+        cy.get('button[aria-label="Close Welcome Banner"]').click();
+      }
+
     getAccountButton(){
         return cy.get('#navbarAccount');
     }
@@ -48,4 +52,3 @@ class LoginPage {
 }
 
 export default new LoginPage();
-

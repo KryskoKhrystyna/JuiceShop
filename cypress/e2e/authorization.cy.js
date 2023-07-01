@@ -21,9 +21,9 @@ import user from '../fixtures/user.json';
 // });
 
 it('Authorization', () => {
-  cy.visit('/#/');
-  cy.log(`close "Welcome to OWASP Juice Shop!" modal window`);
-  cy.get('button[aria-label="Close Welcome Banner"]').click();
+  cy.visit('/');
+  loginPage.closeWelcomeBanner();
+
   cy.log(`login user`);
   loginPage.goToLoginForm();
   loginPage.submitLoginForm(user.email, user.password);

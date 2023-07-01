@@ -9,8 +9,8 @@ export function addOrder() {
         cy.wrap(product).click();
     });
     cy.get('button.mat-button[aria-label="Show the shopping cart"]').click();
-    cy.get('.checkout-button').click();
-    cy.get(`button.mat-raised-button[aria-label="Add a new address"]`).click();
+    cy.get('button#checkoutButton').click();
+    cy.get(`button[aria-label='Add a new address']`).click();
 
     cy.log('Fill in additional information');
     cy.get('input.mat-input-element.mat-form-field-autofill-control').eq(1).type('Ukraine');
